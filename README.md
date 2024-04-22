@@ -1,2 +1,1 @@
-# next-js-prisma-openAi-quizify-app
-Quizify App 
+## Quizify APP (Next.js, Prisma, MySql , OpenAI, Tailwind, ShdCdn UI)
