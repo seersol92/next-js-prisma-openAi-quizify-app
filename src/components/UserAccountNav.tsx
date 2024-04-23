@@ -18,10 +18,9 @@ function UserAccountNav({user}: Props) {
         <UserAvatar  user={user}/>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56 bg-white border p-2 rounded' align='end'>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Billing</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="flex items-center text-red-800 cursor-pointer"  onClick={(e) => { 
             e.preventDefault();
