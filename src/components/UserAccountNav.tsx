@@ -13,11 +13,12 @@ type Props = {
 
 function UserAccountNav({user}: Props) {
   return (
+    <div>
     <DropdownMenu>
       <DropdownMenuTrigger>
         <UserAvatar  user={user}/>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='w-56 bg-white border p-2 rounded' align='end'>
+      <DropdownMenuContent className='w-56 border p-2 rounded' align='end'>
         <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Profile</DropdownMenuItem>
@@ -29,6 +30,7 @@ function UserAccountNav({user}: Props) {
        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+    </div>
   )
 }
 
