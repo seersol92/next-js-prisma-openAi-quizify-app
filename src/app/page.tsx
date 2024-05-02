@@ -6,23 +6,21 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getAuthSession } from "@/lib/nextauth";
 import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
 
-type Props = {};
-
-const App = async (props: Props) => {
-  const session = await getAuthSession();
-  if(session?.user) {
-    redirect('dashboard');
+export default async function Home() {
+  const session = await getServerSession();
+  if (session?.user) {
+    redirect("/dashboard");
   }
   return (
-    <div className="h-screen flex justify-center items-center">
-      <Card className="w-[400px] h-[400px]">
-      <CardHeader>
+    <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+      <Card className="w-[300px]">
+        <CardHeader>
           <CardTitle>Welcome to Quizzzy 🔥!</CardTitle>
           <CardDescription>
-            Quizify is a platform for creating quizzes using AI!. Get started by
+            Quizzzy is a platform for creating quizzes using AI!. Get started by
             loggin in below!
           </CardDescription>
         </CardHeader>
@@ -32,6 +30,4 @@ const App = async (props: Props) => {
       </Card>
     </div>
   );
-};
-
-export default App;
+}
